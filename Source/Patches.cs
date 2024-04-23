@@ -35,7 +35,7 @@ namespace CeilingUtilities
 					def.drawerType = drawFixtures ? CeilingUtilitiesUtility.drawerTypeLedger.TryGetValue(def.shortHash, out DrawerType drawerType) ? drawerType : DrawerType.MapMeshOnly : DrawerType.None;
 				}
 
-				Find.CurrentMap.mapDrawer.WholeMapChanged(MapMeshFlag.Things | MapMeshFlag.Buildings);
+				Find.CurrentMap.mapDrawer.WholeMapChanged(MapMeshFlagDefOf.Things | MapMeshFlagDefOf.Buildings);
 				
                 lastVal = drawFixtures;
 				LoadedModManager.GetMod<Mod_CeilingUtilities>().WriteSettings();

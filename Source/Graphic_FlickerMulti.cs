@@ -14,8 +14,8 @@ namespace CeilingUtilities
 		{
 			if (!drawFixtures || thingDef == null || this.subGraphics == null || !fireCache.TryGetValue(thing.thingIDNumber, out CompFireOverlayMulti comp)) return;
 
-			var gameSpeed = (int)Current.gameInt.tickManager.curTimeSpeed;
-			var tickRateMultiplier = Current.gameInt.tickManager.TickRateMultiplier;
+			var gameSpeed = (int)Current.Game.tickManager.CurTimeSpeed;
+			var tickRateMultiplier = Current.Game.tickManager.TickRateMultiplier;
 			if (tickRateMultiplier > 20) tickRateMultiplier = 20;
 			if (gameSpeed != 0 && RealTime.frameCount % (int)(20 / tickRateMultiplier) == 0 && ++comp.frame == base.subGraphics.Length) comp.frame = 0;
 
@@ -27,7 +27,7 @@ namespace CeilingUtilities
 				matrix.m03 = loc.x + vector.x;
 				matrix.m23 = loc.z + vector.z;
 
-				Graphics.Internal_DrawMesh_Injected
+                Graphics.Internal_DrawMesh_Injected
 				(
 					MeshPool.plane10, //Mesh
 					0, //SubMeshIndex
