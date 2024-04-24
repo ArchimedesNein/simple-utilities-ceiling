@@ -117,7 +117,7 @@
 		</researchPrerequisites>
 	</ThingDef>
 	
-	<ThingDef Name="CeilingLightBase" ParentName="StandingLampBase" Abstract="True">
+	<ThingDef Name="CeilingLightBase" ParentName="LampBase" Abstract="True">
 		<passability>Standable</passability>
 		<clearBuildingArea>false</clearBuildingArea>
 		<altitudeLayer>MoteOverhead</altitudeLayer>
